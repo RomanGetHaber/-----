@@ -1,0 +1,16 @@
+def validate_phone_number(phone_number):
+    if phone_number.startswith('+7') and len(phone_number) == 12:
+        return phone_number
+    elif phone_number.startswith('7') and len(phone_number) == 11:
+        phone_number = '+' + phone_number[::]
+        return phone_number
+    elif phone_number.startswith('8') and len(phone_number) == 11:
+        phone_number = '+7' + phone_number[1:]
+        return phone_number
+    elif phone_number.startswith('9') and len(phone_number) == 10:
+        phone_number = '+7' + phone_number
+        return phone_number
+    else:
+        return False
+
+print(validate_phone_number('89242522424'))
